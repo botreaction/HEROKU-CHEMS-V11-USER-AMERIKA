@@ -470,7 +470,7 @@ XeonBotInc.sendContact = async (jid, kon, quoted = '', opts = {}) => {
 	XeonBotInc.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
     }
 
-    XeonBotInc.public = true
+    XeonBotInc.public = false
 
     XeonBotInc.serializeM = (m) => smsg(XeonBotInc, m, store)
 
