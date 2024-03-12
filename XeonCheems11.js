@@ -6662,147 +6662,71 @@ case 'blur':
             let latensie = speed() - timestampe
             let a = db.data.users[sender]
             let me = m.sender
-            let xmenu_oh = `┌─❖
-│ Hi 👋 
-└┬❖  ${pushname} 
-┌┤✑  ${xeonytimewisher} 😄${readmore} 
-│└────────────┈ ⳹
-│
-└─ 𝘽𝙊𝙏 𝙄𝙉𝙁𝙊 
-│𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
-│𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-│𝗕𝗼𝘁 : ${botname}
-│𝗢𝘄𝗻𝗲𝗿 𝗡𝗼: +${ownernumber}
-│𝗣𝗿𝗲𝗳𝗶𝘅 :  [ ${xprefix} ]
-│𝗠𝗼𝗱𝗲 : ${XeonBotInc.public ? 'Public' : `Self`}
-│𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
-│𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
-│𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length} User
-│𝗧𝗼𝘁𝗮𝗹 𝗛𝗶𝘁 : ${global.db.data.settings[botNumber].totalhit} Hit
-│𝗧𝗼𝘁𝗮𝗹 𝗖𝗵𝗮𝘁 : ${Object.keys(global.db.data.chats).length} Chat/Gc
-│
-└─ 𝙐𝙎𝙀𝙍 𝙄𝙉𝙁𝙊
-│𝗡𝗮𝗺𝗲 : ${pushname}
-│𝗡𝘂𝗺𝗯𝗲𝗿 : +${me.split('@')[0]}
-│𝗟𝗶𝗺𝗶𝘁 : ${a.limit}
-│𝗧𝗶𝘁𝗹𝗲 : ${a.title ? a.title : '-'}
-│𝗦𝗲𝗿𝗶𝗮𝗹: ${a.serialNumber}
-│
-└─ 𝙏𝙄𝙈𝙀 𝙄𝙉𝙁𝙊 
-│??𝗶𝗺𝗲 : ${xtime}
-│𝗗𝗮𝘁𝗲 : ${xdate}
-└┬───────────────── ⳹
-   │✑  Please Type The *MENU*
-   │✑  Given *BELOW*
-┌└─────────────┈ ⳹
-│❏${xprefix}allmenu
-│❏${xprefix}downloadmenu
-│❏${xprefix}funmenu
-│❏${xprefix}aimenu
-│❏${xprefix}groupmenu
-│❏${xprefix}ownermenu
-│❏${xprefix}photooxymenu
-│❏${xprefix}ephoto360menu
-│❏${xprefix}makermenu
-│❏${xprefix}animemenu
-│❏${xprefix}nsfwmenu
-│❏${xprefix}randomphotomenu
-│❏${xprefix}randomvideomenu
-│❏${xprefix}stickermenu
-│❏${xprefix}databasemenu
-│❏${xprefix}stalkermenu
-│❏${xprefix}bugmenu
-│❏${xprefix}othermenu
-└─────────────────┈ ⳹`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+            let xmenu_oh = `
+  Hi 👋 ${pushname} 
+  ${xeonytimewisher} 😀
+
+╔═══❑ 𝗕𝗢𝗧-𝗜𝗡𝗙𝗢 ❑════❀
+║[🗿] 𝚅𝚎𝚛𝚜𝚒𝚘𝚗 : V.10
+║[🚀] 𝚂𝚙𝚎𝚎𝚍 : ${latensie.toFixed(4)} miliseconds
+║[⏳] 𝚁𝚞𝚗𝚝𝚒𝚖𝚎 : ${runtime(process.uptime())}
+║[🤖] ʙᴏᴛ : ${botname}
+║[👤] ᴏᴡɴᴇʀ: +${ownernumber}
+║[🥶] ᴘʀᴇꜰɪx : [ ${xprefix} ]
+║[🔥] ᴍᴏᴅᴇ : ${XeonBotInc.public ? 'Public' : `Self`}
+║[💻] ʜᴏꜱᴛ ɴᴀᴍᴇ: ${os.hostname()}
+║[📰] ᴘʟᴀᴛꜰᴏʀᴍ : ${os.platform()}
+║[📑] ᴛᴏᴛᴀʟ ᴜꜱᴇʀ : ${Object.keys(global.db.data.users).length} User
+║[🎭] ᴛᴏᴛᴀʟ ʜɪᴛ : ${global.db.data.settings[botNumber].totalhit} Hit
+║[🧿] ᴛᴏᴛᴀʟ ᴄʜᴀᴛ : ${Object.keys(global.db.data.chats).length} Chat/Gc
+╚══════════════❀
+
+╔═══❑ 𝗨𝗦𝗘𝗥 𝗜𝗡𝗙𝗢 ❑════❀
+║[🗿] ɴᴀᴍᴇ : ${pushname}
+║[🛡] ɴᴜᴍʙᴇʀ : +${me.split('@')[0]}
+║[🌠] ʟɪᴍɪᴛ : ${a.limit}
+║[📌] ᴛɪᴛʟᴇ : ${a.title ? a.title : '-'}
+║[☕] ꜱᴇʀɪᴀʟ: ${a.serialNumber}
+╚══════════════❀
+
+╔═══❑ 𝗧𝗜𝗠𝗘 𝗜𝗡𝗙𝗢 ❑════❀
+║[⌚] ᴛɪᴍᴇ : ${xtime}
+║[🗓] ᴅᴀᴛᴇ : ${xdate}
+╚══════════════❀
+   
+╔═══❑ 𝗟𝗜𝗦𝗧 𝗠𝗘𝗡𝗨 ❑════❀
+║❏${xprefix}allmenu
+║❏${xprefix}downloadmenu
+║❏${xprefix}funmenu
+║❏${xprefix}aimenu
+║❏${xprefix}groupmenu
+║❏${xprefix}ownermenu
+║❏${xprefix}photooxymenu
+║❏${xprefix}ephoto360menu
+║❏${xprefix}animemenu
+║❏${xprefix}nsfwmenu
+║❏${xprefix}randomphotomenu
+║❏${xprefix}randomvideomenu
+║❏${xprefix}stickermenu
+║❏${xprefix}databasemenu
+║❏${xprefix}stalkermenu
+║❏${xprefix}bugmenu
+║❏${xprefix}othermenu
+║❏${xprefix}soundmenu
+╚══════════════❀
+
+╔═══❑ 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡 ❑════❀
+║🅞 = For Owner
+║🅖 = For Group
+║🅕 = For Free User
+║🅟 = For Premium User
+╚══════════════❀
+
+╔═══❑ 𝗡𝗢𝗧𝗘 ❑════❀
+║𝐁𝐚𝐬𝐞 𝐒𝐜𝐫𝐢𝐩𝐭 𝐁𝐨𝐭 𝐎𝐫𝐢 : 𝗫𝗲𝗼𝗻 ☕
+║𝐄𝐝𝐢𝐭 𝐒𝐜𝐫𝐢𝐩𝐭 : 𝐖𝐢𝐥𝐲 🔥
+╚══════════════❀`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -6811,8 +6735,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -6820,100 +6744,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
             case 'allmenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${allmenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${allmenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -6922,8 +6759,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -6931,100 +6768,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
             case 'ownermenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${ownermenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${ownermenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -7033,8 +6783,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -7042,100 +6792,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'othermenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${othermenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${othermenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -7144,8 +6807,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -7153,100 +6816,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'downloadmenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${downloadmenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${downloadmenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -7255,8 +6831,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -7264,100 +6840,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'groupmenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${groupmenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${groupmenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -7366,8 +6855,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -7375,100 +6864,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'funmenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${funmenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${funmenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -7477,8 +6879,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -7486,100 +6888,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'stalkermenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${stalkermenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${stalkermenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -7588,8 +6903,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -7597,100 +6912,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'randomphotomenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${randphotomenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${randphotomenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -7699,8 +6927,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -7708,100 +6936,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'randomvideomenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${randvideomenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${randvideomenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -7810,8 +6951,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -7819,100 +6960,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'photooxymenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${photooxymenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${photooxymenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -7921,8 +6975,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -7930,100 +6984,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'ephoto360menu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${ephoto360menu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${ephoto360menu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -8032,8 +6999,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -8041,100 +7008,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'makermenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${makermenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${makermenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -8143,8 +7023,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -8152,100 +7032,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'nsfwmenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${nsfwmenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${nsfwmenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -8254,8 +7047,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -8263,100 +7056,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'animemenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${animemenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${animemenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -8365,8 +7071,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -8374,100 +7080,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'stickermenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${stickermenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${stickermenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -8476,8 +7095,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -8485,100 +7104,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'databasemenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${databasemenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${databasemenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -8587,8 +7119,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -8596,100 +7128,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'aimenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${aimenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${aimenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -8698,8 +7143,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -8707,100 +7152,13 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
 case 'bugmenu': {
-let xmenu_oh = `Hi ${pushname}${readmore}\n\n${bugmenu(prefix, hituet)}`
-if (typemenu === 'v1') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v2') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        text: xmenu_oh,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-                }   if (typemenu === 'v3') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v4') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
-                        caption: xmenu_oh,
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
-                } else if (typemenu === 'v5') {
-                    XeonBotInc.relayMessage(m.chat, {
-                        scheduledCallCreationMessage: {
-                            callType: "AUDIO",
-                            scheduledTimestampMs: 1200,
-                            title: xmenu_oh
-                        }
-                    }, {})
-                } else if (typemenu === 'v6') {
-                    XeonBotInc.relayMessage(m.chat,  {
-                       requestPaymentMessage: {
-                          currencyCodeIso4217: 'INR',
-                          amount1000: '9999999900',
-                          requestFrom: m.sender,
-                          noteMessage: {
-                             extendedTextMessage: {
-                                text: xmenu_oh,
-                                contextInfo: {
-                                   externalAdReply: {
-                                       showAdAttribution: true
-                                   }
-                                }
-                             }
-                          }
-                       }
-                    }, {})
-                } else if (typemenu === 'v7') {
-                    XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
-                        },
-                        caption: xmenu_oh,
-                        mimetype: 'application/zip',
-                        fileName: ownername,
-                        fileLength: "99999999999",
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: botname,
-                                body: ownername,
-                                thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
-                                sourceUrl: wagc,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: fstatus 
-                    })
-                } else if (typemenu === 'v8') {
+let xmenu_oh = `Hi ${pushname}\n${bugmenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
                 	XeonBotInc.sendMessage(m.chat, {
       video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
@@ -8809,8 +7167,8 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
-      sourceUrl: ``,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
       mediaType: 1,
       renderLargerThumbnail: true
       }
@@ -8818,9 +7176,47 @@ if (typemenu === 'v1') {
       }, {
                         quoted: m
                     })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
                     }
 }
 break
+
+
+
+
+                         ///baru
+
+
+case 'soundmenu': {
+let xmenu_oh = `Hi ${pushname}\n${soundmenu(prefix, hituet)}`
+ if (typemenu === 'v8') {
+                	XeonBotInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4'),
+      gifPlayback: true,
+      caption: xmenu_oh,
+      contextInfo: {
+      externalAdReply: {
+      title: botname,
+      body: ownername,
+      thumbnailUrl: 'https://telegra.ph/file/2e057689d4c0c8249ca8a.jpg',
+      sourceUrl: `https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC`,
+      mediaType: 1,
+      renderLargerThumbnail: true
+      }
+      }
+      }, {
+                        quoted: m
+                    })
+                    XeonBotInc.sendMessage(m.chat, { audio: fs.readFileSync('./mp3/sad.mp3'), mimetype: 'audio/mp4', ptt: true, fileLength: 88738}, { quoted : m })
+                    }
+}
+break
+
+
+
+
+
+
             case 'checkaccount':
             case 'account': {
                let a = db.data.users[sender]
