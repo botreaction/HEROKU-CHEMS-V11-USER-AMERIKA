@@ -463,7 +463,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                   if (!('antilocation' in chats)) chats.antilocation = false
                   if (!('antidocument' in chats)) chats.antidocument = false
                   if (!('antilink' in chats)) chats.antilink = false
-                  if (!('antilinkgc' in chats)) chats.antilinkgc = false
+                  if (!('antilinkgc' in chats)) chats.antilinkgc = true
                } else global.db.data.chats[from] = {
                   badword: false,
                   antiforeignnum: false,
@@ -480,7 +480,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                   antidocument: false,
                   anticontact: false,
                   antilink: false,
-                  antilinkgc: false
+                  antilinkgc: true
                }
             
             let setting = global.db.data.settings[botNumber]
@@ -493,7 +493,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                if (!('autobio' in setting)) setting.autobio = false 
                if (!('autoread' in setting)) setting.autoread = false
                if (!('autorecordtype' in setting)) setting.autorecordtype = false
-               if (!('autorecord' in setting)) setting.autorecord = false
+               if (!('autorecord' in setting)) setting.autorecord = true
                if (!('autotype' in setting)) setting.autotype = false
                if (!('autoblocknum' in setting)) setting.autoblocknum = false
                if (!('onlyindia' in setting)) setting.onlyindia = false
@@ -515,7 +515,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                onlygrub: false,
                onlypc: false,
                autorecordtype: false,
-               autorecord: false,
+               autorecord: true,
                autotype: false,
                watermark: {
                   packname: global.packname, 
