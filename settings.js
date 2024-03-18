@@ -23,10 +23,10 @@ global.botname = 'WILY MD V10' //ur bot name
 global.ownernumber = '6289688206739' //ur owner number
 global.ownername = 'W I L Y 🔥' //ur owner name
 global.websitex = "wa.me/6289688206739"
-global.wagc = "https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC"
+global.wagc = "https://chat.whatsapp.com/HL8oaxQMOFkChPd1UbkgRK"
 global.themeemoji = '🗿'
 global.wm = "Botz"
-global.botscript = 'https://chat.whatsapp.com/LGOg5yjbhjHLP4BWW3q8YC' //script link
+global.botscript = 'https://chat.whatsapp.com/HL8oaxQMOFkChPd1UbkgRK' //script link
 global.packname = "Sticker By"
 global.author = "W I L Y KUN\n+6289688206739"
 global.creator = "6289688206739@s.whatsapp.net"
@@ -39,11 +39,11 @@ global.typemenu = 'v8' // menu type 'v1' => 'v8'
 global.typereply = 'v2' // reply type 'v1' => 'v3'
 global.autoblocknumber = '212' //set autoblock country code
 global.antiforeignnumber = '91' //set anti foreign number country code
-global.welcome = true //welcome/left in groups
-global.anticall = true //bot blocks user when called
-global.autoswview = true //auto status/story view
-global.adminevent = true //show promote/demote message
-global.groupevent = true //show update messages in group chat
+global.welcome = false //welcome/left in groups
+global.anticall = false //bot blocks user when called
+global.autoswview = false //auto status/story view
+global.adminevent = false //show promote/demote message
+global.groupevent = false //show update messages in group chat
 //msg
 global.mess = {
 	limit: 'Your limit is up!',
