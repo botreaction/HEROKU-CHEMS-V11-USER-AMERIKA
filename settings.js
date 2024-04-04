@@ -19,7 +19,7 @@ global.socialm = "Private" //ur github or insta name
 global.location = "Indonesian, Bandung, Jabar" //ur location
 
 //new
-global.botname = 'WILY MD V11' //ur bot name
+global.botname = 'Alisa Mikhailovna Kujou😋' //ur bot name
 global.ownernumber = '6289688206739' //ur owner number
 global.ownername = 'W I L Y 🔥' //ur owner name
 global.websitex = "wa.me/6289688206739"
