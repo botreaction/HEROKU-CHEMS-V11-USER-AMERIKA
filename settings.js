@@ -19,7 +19,7 @@ global.socialm = "Private" //ur github or insta name
 global.location = "Indonesian, Bandung, Jabar" //ur location
 
 //new
-global.botname = 'WILY MD V10' //ur bot name
+global.botname = 'WILY MD V11' //ur bot name
 global.ownernumber = '6289688206739' //ur owner number
 global.ownername = 'W I L Y 🔥' //ur owner name
 global.websitex = "wa.me/6289688206739"
@@ -40,7 +40,7 @@ global.typereply = 'v2' // reply type 'v1' => 'v3'
 global.autoblocknumber = '212' //set autoblock country code
 global.antiforeignnumber = '91' //set anti foreign number country code
 global.welcome = true //welcome/left in groups
-global.anticall = false //bot blocks user when called
+global.anticall = true //bot blocks user when called
 global.autoswview = true //auto status/story view
 global.adminevent = true //show promote/demote message
 global.groupevent = true //show update messages in group chat

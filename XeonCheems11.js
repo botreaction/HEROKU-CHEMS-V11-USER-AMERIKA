@@ -463,7 +463,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                   if (!('antilocation' in chats)) chats.antilocation = false
                   if (!('antidocument' in chats)) chats.antidocument = false
                   if (!('antilink' in chats)) chats.antilink = false
-                  if (!('antilinkgc' in chats)) chats.antilinkgc = false
+                  if (!('antilinkgc' in chats)) chats.antilinkgc = true
                } else global.db.data.chats[from] = {
                   badword: false,
                   antiforeignnum: false,
@@ -480,7 +480,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                   antidocument: false,
                   anticontact: false,
                   antilink: false,
-                  antilinkgc: false
+                  antilinkgc: true
                }
             
             let setting = global.db.data.settings[botNumber]
@@ -489,12 +489,12 @@ return arr[Math.floor(Math.random() * arr.length)]
                if (!('totalhit' in setting)) setting.totalhit = 0
                if (!('totalError' in setting)) setting.totalError = 0
                if (!('online' in setting)) setting.online = false 
-               if (!('autosticker' in setting)) setting.autosticker = false 
+               if (!('autosticker' in setting)) setting.autosticker = true 
                if (!('autobio' in setting)) setting.autobio = false 
                if (!('autoread' in setting)) setting.autoread = false
                if (!('autorecordtype' in setting)) setting.autorecordtype = false
                if (!('autorecord' in setting)) setting.autorecord = false
-               if (!('autotype' in setting)) setting.autotype = false
+               if (!('autotype' in setting)) setting.autotype = true
                if (!('autoblocknum' in setting)) setting.autoblocknum = false
                if (!('onlyindia' in setting)) setting.onlyindia = false
                if (!('onlyindo' in setting)) setting.onlyindo = false
@@ -506,7 +506,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                totalhit: 0,
                totalError: 0,
                online: false,
-               autosticker: false,
+               autosticker: true,
                autobio: false,
                autoread: false,
                autoblocknum: false,
@@ -516,7 +516,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                onlypc: false,
                autorecordtype: false,
                autorecord: false,
-               autotype: false,
+               autotype: true,
                watermark: {
                   packname: global.packname, 
                   author: global.author
@@ -6667,7 +6667,7 @@ case 'blur':
   ${xeonytimewisher} 😀
 
 ╔═══❑ 𝗕𝗢𝗧-𝗜𝗡𝗙𝗢 ❑════❀
-║[🗿] 𝚅𝚎𝚛𝚜𝚒𝚘𝚗 : V.10
+║[🗿] 𝚅𝚎𝚛𝚜𝚒𝚘𝚗 : V.11
 ║[🚀] 𝚂𝚙𝚎𝚎𝚍 : ${latensie.toFixed(4)} miliseconds
 ║[⏳] 𝚁𝚞𝚗𝚝𝚒𝚖𝚎 : ${runtime(process.uptime())}
 ║[🤖] ʙᴏᴛ : ${botname}
