@@ -489,7 +489,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                if (!('totalhit' in setting)) setting.totalhit = 0
                if (!('totalError' in setting)) setting.totalError = 0
                if (!('online' in setting)) setting.online = false 
-               if (!('autosticker' in setting)) setting.autosticker = true 
+               if (!('autosticker' in setting)) setting.autosticker = false 
                if (!('autobio' in setting)) setting.autobio = false 
                if (!('autoread' in setting)) setting.autoread = false
                if (!('autorecordtype' in setting)) setting.autorecordtype = false
@@ -506,7 +506,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                totalhit: 0,
                totalError: 0,
                online: false,
-               autosticker: true,
+               autosticker: false,
                autobio: false,
                autoread: false,
                autoblocknum: false,
